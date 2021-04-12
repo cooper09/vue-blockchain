@@ -1,19 +1,39 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+   
+    <BlockChain v-bind:blocks="blocks" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './components/HelloWorld.vue';
+import BlockChain from './components/BlockChain.vue';
+
+import Test from './test.js';
+const test = new Test();
+const data = test.getData();
+console.log("Test data: ", data )
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    HelloWorld,
+    BlockChain
+  },
+  data() {
+    return {
+    blocks: [
+      {
+        "id": "Genesis"
+      },
+      {
+        "id": "Block One"
+      }
+    ]
+    }//end return
+  }//end data
+}//end export
 </script>
 
 <style>
