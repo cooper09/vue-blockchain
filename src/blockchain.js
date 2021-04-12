@@ -22,6 +22,7 @@ class Block {
 
 class Blockchain {
     constructor () {
+        console.log("New Blockchain")
         this.chain = [this.createGenesisBlock()];
     }
     //create genesis block
@@ -73,11 +74,12 @@ testCoin.addBlock(new Block (1,timestamp, {amount: 4}));  //hash is generated in
 testCoin.addBlock(new Block (2,timestamp, {amount: 10}));
 
 console.log("TSC ", testCoin );
-console.log("UIs chain valid 1: ", testCoin.validate());
+/*console.log("UIs chain valid 1: ", testCoin.validate());
 
 testCoin.chain[1].data = {amount: 100000}
 
 console.log("change data: ", testCoin.validate());
 
 testCoin.chain[1].hash = testCoin.chain[1].createHash();
-console.log("change hash: ", testCoin.validate());
+console.log("change hash: ", testCoin.validate()); 
+*/

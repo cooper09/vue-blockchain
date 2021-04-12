@@ -27,12 +27,12 @@ export default {
     }//end return
   }, //end data
   created () {
+  const timestamp =  new Date().getTime();
   const test = new Test();
   const data = test.getData();
-  console.log("Test data: ", data );
+  console.log("Test data: ", test );
   this.blocks = [...this.blocks, data ]
-
-  const  blockchain = new Blockchain();
+  
   }//end created
 }//end export
 
