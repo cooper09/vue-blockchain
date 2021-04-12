@@ -1,9 +1,20 @@
 export default class Test {
+
     constructor() {
-        console.log("Test Constructor")
+        console.log("Test Constructor");
+
     }
     
     getData () {
-        return "Hello, stinky!"
+        
+        const data = [
+            {
+              "id": "Genesis"
+            },
+            {
+              "id": "Block One"
+            }
+          ]
+        return data
     }
 } //end Test Class

@@ -11,9 +11,8 @@ import HelloWorld from './components/HelloWorld.vue';
 import BlockChain from './components/BlockChain.vue';
 
 import Test from './test.js';
-const test = new Test();
-const data = test.getData();
-console.log("Test data: ", data )
+import Blockchain from './blockchain.js'
+
 
 export default {
   name: 'App',
@@ -23,17 +22,20 @@ export default {
   },
   data() {
     return {
-    blocks: [
-      {
-        "id": "Genesis"
-      },
-      {
-        "id": "Block One"
-      }
-    ]
+    blocks: []
+
     }//end return
-  }//end data
+  }, //end data
+  created () {
+  const test = new Test();
+  const data = test.getData();
+  console.log("Test data: ", data );
+  this.blocks = [...this.blocks, data ]
+
+  const  blockchain = new Blockchain();
+  }//end created
 }//end export
+
 </script>
 
 <style>
